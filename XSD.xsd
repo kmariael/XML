@@ -1,0 +1,63 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+
+    <xsd:element name="CATALOGUE">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="recipe" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="title" type="xsd:string"/>
+                            <xsd:element name="prep_time">
+                                <xsd:complexType>
+                                    <xsd:attribute name="hours" type="xsd:integer" use="required"/>
+                                    <xsd:attribute name="minutes" type="xsd:integer" use="required"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="cook_time">
+                                <xsd:complexType>
+                                    <xsd:attribute name="hours" type="xsd:integer" use="required"/>
+                                    <xsd:attribute name="minutes" type="xsd:integer" use="required"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="difficulty_level" type="xsd:string"/>
+                            <xsd:element name="recipe_portions" type="xsd:positiveInteger"/>
+                            <xsd:element name="introduction" type="xsd:string"/>
+                            <xsd:element name="recipe_category" type="xsd:string" maxOccurs="unbounded"/>
+                            <xsd:element name="ingredient" maxOccurs="unbounded">
+                                <xsd:complexType mixed="true">
+                                    <xsd:attribute name="amount" type="xsd:string" use="optional"/>
+                                    <xsd:attribute name="unit" type="xsd:string" use="optional"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="preperation">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="title" type="xsd:string"/>
+                                        <xsd:element name="introduction" type="xsd:string"/>
+                                        <xsd:element name="step" type="xsd:string" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="comment" type="xsd:string" maxOccurs="unbounded"/>
+                            <xsd:element name="recommended_recipies">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="title" type="xsd:string"/>
+                                        <xsd:element name="recom_recipe" type="xsd:string" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="popular_recipies">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="popular_recipe" type="xsd:string" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>    
+</xsd:schema>
